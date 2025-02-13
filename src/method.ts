@@ -12,9 +12,19 @@ const person = {
     }
 }
 
-// console.log(person.fullInfo());
+console.log(person.fullInfo());
+
+
+/** Destructuring  */
 
 const { fullInfo , info } = person
 
 console.log(fullInfo());
 console.log(info());
+
+/** Sperad */
+
+
+const jasser =  { ...person , country : 'syria' }
+
+console.log(jasser.fullInfo());
