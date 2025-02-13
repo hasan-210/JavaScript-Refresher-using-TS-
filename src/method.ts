@@ -22,9 +22,14 @@ const { fullInfo , info } = person
 console.log(fullInfo());
 console.log(info());
 
-/** Sperad */
+/** Sperad operator*/
 
 
 const jasser =  { ...person , country : 'syria' }
 
 console.log(jasser.fullInfo());
+
+
+/** Reset Operator  */
+const {username , age , ...resetPerson} = person ;
+console.log(resetPerson);
