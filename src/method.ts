@@ -5,11 +5,16 @@ const person = {
     age: 25,
 
     info : function (){   // this function like property
-        return `My Name Is  ${this.username} And My Age Is ${this.age}`
+        return "this is a person"
     } ,
     fullInfo(){
-         return `My Name Is  ${this.username} And My Age Is ${this.age}`
+         return "this is a person"
     }
 }
 
-console.log(person.fullInfo());
+// console.log(person.fullInfo());
+
+const { fullInfo , info } = person
+
+console.log(fullInfo());
+console.log(info());
