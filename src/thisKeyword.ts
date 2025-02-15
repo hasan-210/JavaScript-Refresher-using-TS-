@@ -58,3 +58,31 @@ class Person {
 const hasan = new Person('hasan')
 console.log(hasan.username);
 
+
+// --------------- this keyword binding with arrow functions ---------------
+
+
+const fullName = function(this:any){
+    return `${this.firstName} ${this.lastName}` ;
+}
+
+const jaser = {
+    firstName : 'hasan',
+    lastName: 'jasser'
+}
+
+//     - 1 -
+// const hasanUser = fullName.bind(jaser)
+// console.log(hasanUser());
+
+
+//   - 2 -
+const hasanUser = fullName.bind(jaser)()
+console.log(hasanUser);
+
+
+
+// this not work with Arrow functions
+// const fullName = () => {
+//     return `${this.firstName} ${this.lastName}` ;
+// }
