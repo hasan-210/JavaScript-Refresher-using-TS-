@@ -44,3 +44,17 @@ console.log(printUser.bind(person1)('Hello Mr'));
 console.log(printUser.call(person1,'Hello Mr'));
 console.log(person2.printAge());
 
+
+/***************** New Binding | this with class */
+
+
+class Person {
+    username:string ;
+    constructor(username:string){
+        this.username = username
+    }
+}
+
+const hasan = new Person('hasan')
+console.log(hasan.username);
+
