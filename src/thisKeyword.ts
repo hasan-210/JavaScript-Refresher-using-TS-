@@ -6,9 +6,41 @@ const people = {
     age : 25,
 
     info(){
-        console.log(this);
-        return 'Full information . . .';
+        return  printThis.bind(this)().username; // refer to owner function
+        // return  printThis.call(this).username; // refer to owner function
+        // return 'Full information . . .';
+    }
+};
+
+
+function printThis(this:any){
+    return this ;
+}
+
+// console.log(people.info());
+
+
+/** Implicit Binding & Explicit  Binding */
+
+const person1 = {
+    username: ' hasan',
+}
+
+const person2 = {
+    username: 'ali',
+    age:25,
+
+    printAge(){
+        return this.age ;
     }
 }
 
-console.log(people.info());
+function printUser(this: any , message:string){
+    // console.log(this);
+    return `Hi, ${this.username} , ${message}`
+}
+
+console.log(printUser.bind(person1)('Hello Mr'));
+console.log(printUser.call(person1,'Hello Mr'));
+console.log(person2.printAge());
+
